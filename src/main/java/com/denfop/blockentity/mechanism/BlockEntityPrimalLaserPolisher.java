@@ -173,7 +173,7 @@ public class BlockEntityPrimalLaserPolisher extends BlockEntityInventory impleme
         if (stack.getItem() == IUItem.laser.getItem() && this.output != null && this.outputSlot.isEmpty() && this.getWorld().isDay()) {
             progress += (short) (5 + (short) (data.getOrDefault(player.getUUID(), 0.0) / 10d));
             this.getCooldownTracker().setTick(10);
-            if (progress >= 100) {
+            if (progress >= 0) {
                 this.progress = 0;
                 player.setItemInHand(hand, stack.getItem().getCraftingRemainingItem(stack));
                 if (!this.getWorld().isClientSide)
